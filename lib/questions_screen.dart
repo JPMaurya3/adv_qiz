@@ -1,4 +1,5 @@
 import 'package:adv_quiz/data/questions.dart';
+import 'package:adv_quiz/result_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'models/answer_button.dart';
@@ -21,12 +22,18 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     setState(() {
       currentQuestionsIndex ++;
     });
+    /*if(currentQuestionsIndex == questions.length){
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context)=>
+              ResultScreen(currentQuestionsIndex:currentQuestionsIndex )));
+    }*/
   }
   @override
   Widget build(context) {
     final currentQuestion = questions[currentQuestionsIndex];
+    print("current questions index ${currentQuestion}");
     return Container(
-      padding: EdgeInsets.only(left: 10,right: 10),
+      padding:const  EdgeInsets.only(left: 10,right: 10),
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
